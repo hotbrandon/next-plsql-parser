@@ -12,8 +12,13 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [parserOutput, setParserOutput] = useState();
 
-  const parseSQL = async () => {
+  const handleClick = async () => {
     setIsLoading(true);
+    await parseSQL();
+    setIsLoading(false);
+  };
+
+  const parseSQL = async () => {
     const stream = new antlr4.InputStream(refSqlArea.current.value);
     const lexer = new PlSqlLexer(stream);
     const tokens = new antlr4.CommonTokenStream(lexer);
@@ -22,7 +27,7 @@ export default function Home() {
 
     const listener = new MyParserListener();
     antlr4.tree.ParseTreeWalker.DEFAULT.walk(listener, parser.query_block());
-    setIsLoading(false);
+
     listener.displayTablesAndColumns();
     setParserOutput(listener.getOutput());
   };
@@ -40,13 +45,13 @@ export default function Home() {
           <div className="flex gap-x-3">
             <button
               className="py-2 px-4 bg-blue-500 text-white grow"
-              onClick={parseSQL}
+              onClick={handleClick}
             >
               Submit
             </button>
             <button
               className="py-2 px-4 bg-blue-500 text-white grow"
-              onClick={() => refSqlArea.current.reset()}
+              onClick={() => (refSqlArea.current.value = "")}
             >
               Clear
             </button>
