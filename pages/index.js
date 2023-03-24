@@ -1,14 +1,18 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import antlr4 from "antlr4";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import PlSqlParser from "@/parser/PlSqlParser";
 import PlSqlLexer from "@/parser/PlSqlLexer";
 import MyParserListener from "@/parser/MyParserListener";
 import LoadingOverlay from "@/components/LoadingOverlay";
 
+import SQLArea from "@/components/SQLArea";
+import ParserOutput from "components/ParserOutput";
+
 export default function Home() {
-  const refSqlArea = useRef();
+  const refSqlArea = useRef("");
+  const [sqlText, setSqlText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [parserOutput, setParserOutput] = useState();
 
@@ -19,6 +23,7 @@ export default function Home() {
   };
 
   const parseSQL = async () => {
+    setParserOutput([]);
     const stream = new antlr4.InputStream(refSqlArea.current.value);
     const lexer = new PlSqlLexer(stream);
     const tokens = new antlr4.CommonTokenStream(lexer);
@@ -42,6 +47,7 @@ export default function Home() {
             className="h-full resize-none border-2 p-2"
             placeholder="paste your PL/SQL script"
           ></textarea>
+          <SQLArea text={sqlText} />
           <div className="flex gap-x-3">
             <button
               className="py-2 px-4 bg-blue-500 text-white grow"
@@ -51,14 +57,23 @@ export default function Home() {
             </button>
             <button
               className="py-2 px-4 bg-blue-500 text-white grow"
-              onClick={() => (refSqlArea.current.value = "")}
+              onClick={() => {
+                refSqlArea.current.value = "";
+                setSqlText("");
+              }}
             >
               Clear
             </button>
+            <button
+              className="py-2 px-4 bg-blue-500 text-white grow"
+              onClick={() => setSqlText(refSqlArea.current.value)}
+            >
+              Highlight
+            </button>
           </div>
         </div>
-        <div className="flex-1 flex flex-col">
-          {parserOutput && parserOutput.map((line, i) => <p key={i}>{line}</p>)}
+        <div className="flex-1 flex flex-col overflow-auto">
+          {parserOutput && <ParserOutput markdown={parserOutput} />}
         </div>
       </div>
     </>

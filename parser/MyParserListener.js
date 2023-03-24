@@ -14,19 +14,23 @@ class MyParserListener extends PlSqlParserListener {
   }
 
   enterQuery_block(ctx) {
-    this.output.push("enterQuery_block");
+    this.output.push("# enterQuery_block\n");
   }
 
   // Exit a parse tree produced by PlSqlParser#query_block.
   exitQuery_block(ctx) {
-    this.output.push("exitQuery_block");
+    this.output.push("# exitQuery_block\n");
   }
 
   enterTableview_name(ctx) {
+    this.output.push("# enterTableview_name\n");
+    this.output.push("## table:" + ctx.getText() + "\n");
     this.tables.add(ctx.getText());
   }
 
   enterId_expression(ctx) {
+    this.output.push("# enterId_expression\n");
+    this.output.push("## column:" + ctx.getText() + "\n");
     let column = ctx.getText();
     let table = null;
     for (
