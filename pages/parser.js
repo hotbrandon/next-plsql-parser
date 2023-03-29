@@ -17,21 +17,23 @@ export default function Home() {
   const [parserOutput, setParserOutput] = useState();
 
   const handleClick = async () => {
-    setIsLoading(true);
+    // setIsLoading(true);
     await parseSQL();
-    setIsLoading(false);
+    // setIsLoading(false);
   };
 
   const parseSQL = async () => {
     setParserOutput([]);
-    const stream = new antlr4.InputStream(refSqlArea.current.value);
+    console.log(refSqlArea.current.value);
+    var sqlCode = document.getElementById("sqlCode").value;
+    const stream = new antlr4.InputStream(sqlCode);
     const lexer = new PlSqlLexer(stream);
     const tokens = new antlr4.CommonTokenStream(lexer);
     const parser = new PlSqlParser(tokens);
     parser.buildParserTrees = true;
 
     const listener = new MyParserListener();
-    antlr4.tree.ParseTreeWalker.DEFAULT.walk(listener, parser.query_block());
+    antlr4.tree.ParseTreeWalker.DEFAULT.walk(listener, parser.sql_script());
 
     listener.displayTablesAndColumns();
     setParserOutput(listener.getOutput());
@@ -40,10 +42,11 @@ export default function Home() {
   return (
     <>
       {isLoading && <LoadingOverlay />}
-      <div className="flex h-screen gap-x-3">
+      <div className="flex gap-x-3 h-full">
         <div className="flex-1 flex flex-col">
           <textarea
             ref={refSqlArea}
+            id="sqlCode"
             className="h-full resize-none border-2 p-2"
             placeholder="paste your PL/SQL script"
           ></textarea>

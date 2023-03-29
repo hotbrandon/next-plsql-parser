@@ -14,7 +14,7 @@ const ParserOutput = ({ markdown }) => {
   }, [markdown]);
 
   return (
-    <div>
+    <div className="border">
       {/* <pre>
         <code className="language-markdown"> */}
       {markdown.map((text, index) => (

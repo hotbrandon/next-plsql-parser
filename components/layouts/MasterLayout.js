@@ -7,7 +7,7 @@ const MasterLayout = ({ children }) => {
     <div className="flex flex-col h-screen">
       <Header />
       <div className="flex flex-1">
-        <div className="bg-slate-50 min-w-[250px] p-4">
+        <div className="bg-slate-50 min-w-[200px] p-4">
           {/* menu on the left */}
           <SideBar />
         </div>

@@ -9293,6 +9293,168 @@ export default class PlSqlParserListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by PlSqlParser#json_function.
+	enterJson_function(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_function.
+	exitJson_function(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_object_content.
+	enterJson_object_content(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_object_content.
+	exitJson_object_content(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_object_entry.
+	enterJson_object_entry(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_object_entry.
+	exitJson_object_entry(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_table_clause.
+	enterJson_table_clause(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_table_clause.
+	exitJson_table_clause(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_array_element.
+	enterJson_array_element(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_array_element.
+	exitJson_array_element(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_on_null_clause.
+	enterJson_on_null_clause(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_on_null_clause.
+	exitJson_on_null_clause(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_return_clause.
+	enterJson_return_clause(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_return_clause.
+	exitJson_return_clause(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_transform_op.
+	enterJson_transform_op(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_transform_op.
+	exitJson_transform_op(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_column_clause.
+	enterJson_column_clause(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_column_clause.
+	exitJson_column_clause(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_column_definition.
+	enterJson_column_definition(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_column_definition.
+	exitJson_column_definition(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_query_returning_clause.
+	enterJson_query_returning_clause(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_query_returning_clause.
+	exitJson_query_returning_clause(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_query_return_type.
+	enterJson_query_return_type(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_query_return_type.
+	exitJson_query_return_type(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_query_wrapper_clause.
+	enterJson_query_wrapper_clause(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_query_wrapper_clause.
+	exitJson_query_wrapper_clause(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_query_on_error_clause.
+	enterJson_query_on_error_clause(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_query_on_error_clause.
+	exitJson_query_on_error_clause(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_query_on_empty_clause.
+	enterJson_query_on_empty_clause(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_query_on_empty_clause.
+	exitJson_query_on_empty_clause(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_value_return_clause.
+	enterJson_value_return_clause(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_value_return_clause.
+	exitJson_value_return_clause(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_value_return_type.
+	enterJson_value_return_type(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_value_return_type.
+	exitJson_value_return_type(ctx) {
+	}
+
+
+	// Enter a parse tree produced by PlSqlParser#json_value_on_mismatch_clause.
+	enterJson_value_on_mismatch_clause(ctx) {
+	}
+
+	// Exit a parse tree produced by PlSqlParser#json_value_on_mismatch_clause.
+	exitJson_value_on_mismatch_clause(ctx) {
+	}
+
+
 	// Enter a parse tree produced by PlSqlParser#literal.
 	enterLiteral(ctx) {
 	}
